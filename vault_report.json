@@ -1,0 +1,10 @@
+﻿{
+    "WwwAuthenticate":  "Bearer authorization=\u0027https://login.microsoftonline.com/72f988bf-86f1-41af-91ab-2d7cd011db47\u0027, resource=\u0027https://vault.azure.net\u0027",
+    "Timestamp":  "2025-11-01T16:15:48Z",
+    "RootPathStatus":  403,
+    "Impact":  "Vault is protected; no secret disclosure observed. Include in asset inventory and review access controls.",
+    "AuthenticationAttempted":  false,
+    "VaultUrl":  "https://myvault.vault.azure.net/secrets?api-version=7.3",
+    "BodySnippet":  "AKV10000: Request is missing a Bearer or PoP token.",
+    "HttpStatus":  401
+}

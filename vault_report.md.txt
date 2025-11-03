@@ -1,0 +1,86 @@
+--- begin copy (vault_report.md) ---
+
+
+Finding: Azure Key Vault discovered — requires OAuth2 (Azure AD)
+
+Executive summary
+
+
+Asset: myvault.vault.azure.net
+
+Finding time: 2025-11-01T16:15:48Z
+
+Summary: Probed https://myvault.vault.azure.net/secrets?api-version=7.3 and received HTTP 401 Unauthorized. The response body reports AKV10000: Request is missing a Bearer or PoP token. The WWW-Authenticate header points to Azure AD tenant 72f988bf-86f1-41af-91ab-2d7cd011db47. The vault root returns 403 Forbidden. No authentication attempts were performed.
+
+
+Evidence (collected)
+
+
+URL: https://myvault.vault.azure.net/secrets?api-version=7.3
+
+HTTP status: 401
+
+Timestamp: 2025-11-01T16:15:48Z
+
+WWW-Authenticate header:
+Bearer authorization="https://login.microsoftonline.com/72f988bf-86f1-41af-91ab-2d7cd011db47", resource="https://vault.azure.net"
+
+Response body (snippet): {"error":{"code":"Unauthorized","message":"AKV10000: Request is missing a Bearer or PoP token."}}
+
+Root URL: https://myvault.vault.azure.net/ → 403 Forbidden (Access denied)
+
+
+Impact
+
+
+The service is an Azure Key Vault instance that requires Azure AD bearer tokens. No secret disclosure observed during these read‑only probes. The discovery should be added to asset inventory and access reviewed.
+
+
+Recommendations (non‑intrusive)
+
+
+Restrict network access:
+
+Prefer Private Endpoint or Key Vault firewall/VNet rules to limit access to authorized networks.
+
+
+
+Enforce least‑privilege:
+
+Review Azure RBAC roles and Key Vault access policies; remove excessive permissions.
+
+
+
+Logging & monitoring:
+
+Enable diagnostic logs (send to Log Analytics / Event Hub / Storage). Alert on repeated 401/403 from unusual IPs.
+
+
+
+Protection & hygiene:
+
+Enable soft‑delete and purge‑protection.
+
+Rotate keys/secrets if there is any suspicion of exposure.
+
+
+
+Inventory & authorization:
+
+Document vault in asset inventory and audit service principals / app registrations that have access.
+
+
+
+
+Next steps (for ops)
+
+
+If you want, fetch tenant OIDC metadata (read‑only) from:
+https://login.microsoftonline.com/72f988bf-86f1-41af-91ab-2d7cd011db47/.well-known/openid-configuration
+
+(Used to identify auth/token endpoints; safe to query.)
+
+If you have permission to test auth flows, request scoped authorization and a temporary test principal before any auth tests.
+
+
+--- end copy (vault_report.md) ---

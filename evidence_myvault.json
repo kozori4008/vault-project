@@ -1,0 +1,56 @@
+﻿[
+    {
+        "target":  "example.com",
+        "seed":  "myvault",
+        "url":  "https://myvault.vault.azure.net/",
+        "ts":  "2025-11-01T15:56:34.555217Z",
+        "status":  403,
+        "headers":  {
+                        "Content-Type":  "text/html",
+                        "X-Content-Type-Options":  "nosniff",
+                        "Strict-Transport-Security":  "max-age=31536000;includeSubDomains",
+                        "Date":  "Sat, 01 Nov 2025 15:56:33 GMT",
+                        "Connection":  "close",
+                        "Content-Length":  "1233"
+                    },
+        "www_authenticate":  "",
+        "body_snippet":  "\u003c!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\"\u003e\r\n\u003chtml xmlns=\"http://www.w3.org/1999/xhtml\"\u003e\r\n\u003chead\u003e\r\n\u003cmeta http-equiv=\"Content-Type\" content=\"text/html; charset=iso-8859-1\"/\u003e\r\n\u003ctitle\u003e403 - Forbidden: Access is denied.\u003c/title\u003e\r\n\u003cstyle type=\"text/css\"\u003e\r\n\u003c!--\r\nbody{margin:0;font-size:.7em;font-family:Verdana, Arial, Helvetica, sans-serif;background:#EEEEEE;}\r\nfieldset{padding:0 15px 10px 15px;} \r\nh1{font-size:2.4em;margin:0;color:#FFF;}\r\nh2{font-size:1.7em;margin:0;color:#CC0000;} \r\nh3{font-size:1.2em;margin:10px 0 0 0;color:#000000;} \r\n#header{width:96%;margin:0 0 0 0;padding:6px 2% 6px 2%;font-family:\"trebuchet MS\", Verdana, sans-serif;color:#FFF;\r\nbackground-color:#555555;}\r\n#content{margin:0 0 0 2%;position:relative;}\r\n.content-container{background:#FFF;width:96%;margin-top:8px;padding:10px;position:relative;}\r\n--\u003e\r\n\u003c/style\u003e\r\n\u003c/head\u003e\r\n\u003cbody\u003e\r\n\u003cdiv id=\"header\"\u003e\u003ch1\u003eServer Error\u003c/h1\u003e\u003c/div\u003e\r\n\u003cdiv id=\"content\"\u003e\r\n \u003cdiv class=\"content-container\"\u003e\u003cfieldset\u003e\r\n  \u003ch2\u003e403 - Forbidden: Access is denied.\u003c/h2\u003e\r\n  \u003ch3\u003eYou do not have permission to view this directory or page using the credentials that you supplied.\u003c/h3\u003e\r\n \u003c/fieldset\u003e\u003c/div\u003e\r\n\u003c/div\u003e\r\n\u003c/body\u003e\r\n\u003c/html\u003e\r\n",
+        "fingerprints":  [
+
+                         ],
+        "matches":  [
+
+                    ]
+    },
+    {
+        "target":  "example.com",
+        "seed":  "myvault",
+        "url":  "https://myvault.vault.azure.net/secrets?api-version=7.3",
+        "ts":  "2025-11-01T15:56:36.301673Z",
+        "status":  401,
+        "headers":  {
+                        "Cache-Control":  "no-cache",
+                        "Pragma":  "no-cache",
+                        "Content-Type":  "application/json; charset=utf-8",
+                        "Expires":  "-1",
+                        "x-ms-keyvault-region":  "East US",
+                        "x-ms-request-id":  "93d40e90-d06c-4252-8f95-69650ab011ed",
+                        "x-ms-keyvault-service-version":  "1.9.2791.2",
+                        "x-ms-keyvault-network-info":  "conn_type=Ipv4;addr=5.214.132.90;act_addr_fam=InterNetwork;",
+                        "X-Content-Type-Options":  "nosniff",
+                        "Strict-Transport-Security":  "max-age=31536000;includeSubDomains",
+                        "WWW-Authenticate":  "Bearer authorization=\"https://login.microsoftonline.com/72f988bf-86f1-41af-91ab-2d7cd011db47\", resource=\"https://vault.azure.net\"",
+                        "Date":  "Sat, 01 Nov 2025 15:56:34 GMT",
+                        "Connection":  "close",
+                        "Content-Length":  "97"
+                    },
+        "www_authenticate":  "Bearer authorization=\"https://login.microsoftonline.com/72f988bf-86f1-41af-91ab-2d7cd011db47\", resource=\"https://vault.azure.net\"",
+        "body_snippet":  "{\"error\":{\"code\":\"Unauthorized\",\"message\":\"AKV10000: Request is missing a Bearer or PoP token.\"}}",
+        "fingerprints":  [
+
+                         ],
+        "matches":  [
+
+                    ]
+    }
+]
